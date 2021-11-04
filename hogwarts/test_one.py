@@ -1,9 +1,12 @@
 import allure
 import pytest
+import yaml
+from hogwarts.common import Common
 
 class TestCommon(object):
     def setup(self):
-        pass
+        self.common = Common(url_root=yaml.load(open(r'D:\GitCode\laixiaobin_autotest\hogwarts\env.yml'))['stg'])
+        self.headers = yaml.load(open(r'D:\GitCode\laixiaobin_autotest\hogwarts\headers.yml'))['stg']
 
     def teardown(self):
         pass
